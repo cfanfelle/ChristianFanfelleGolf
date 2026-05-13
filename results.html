@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Results | Christian Fanfelle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <img src="CFG LOGO.png" alt="Christian Fanfelle Golf" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tournaments.html">Upcoming</a></li>
+                <li><a href="results.html" class="active-nav">Results</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#support" class="btn-gold">Support</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 50vh; background: linear-gradient(rgba(10, 54, 34, 0.8), rgba(10, 54, 34, 0.8)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;">
+        <div class="hero-content">
+            <h1>Tournament Results</h1>
+            <p>2026 Season</p>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section">
+        <div class="container">
+            <div class="results-container" id="results-list">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Christian Fanfelle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const results = [
+                {
+                    name: "Texas State Open",
+                    date: "May 1-4, 2026",
+                    location: "Tyler, TX",
+                    result: "T-4",
+                    score: "-8"
+                }
+            ];
+
+            const resultsContainer = document.getElementById("results-list");
+            results.forEach(result => {
+                const div = document.createElement("div");
+                div.className = "result-card";
+                div.innerHTML = `
+                    <div class="result-header">
+                        <h3>${result.name}</h3>
+                        <div class="result-finish">
+                            <span class="finish">${result.result}</span>
+                            <span class="score">${result.score}</span>
+                        </div>
+                    </div>
+                    <div class="result-details">
+                        <p><strong>Dates:</strong> ${result.date}</p>
+                        <p><strong>Location:</strong> ${result.location}</p>
+                    </div>
+                `;
+                resultsContainer.appendChild(div);
+            });
+
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links li a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

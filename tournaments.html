@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Tournaments | Christian Fanfelle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <img src="CFG LOGO.png" alt="Christian Fanfelle Golf" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tournaments.html" class="active-nav">Upcoming</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#support" class="btn-gold">Support</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 50vh; background: linear-gradient(rgba(10, 54, 34, 0.8), rgba(10, 54, 34, 0.8)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;">
+        <div class="hero-content">
+            <h1>Upcoming Tournaments</h1>
+            <p>APT Tour Schedule 2026</p>
+        </div>
+    </section>
+
+    <!-- Tournaments Section -->
+    <section class="section">
+        <div class="container">
+            <div class="schedule-container" id="schedule-list">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Christian Fanfelle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const upcomingTournaments = [
+                {
+                    name: "The Paragon Casino/PDSG Championship",
+                    date: "May 5-7, 2026",
+                    location: "Tamaha Trails GC • Marksville, LA",
+                    purse: "$85,000",
+                    status: "Upcoming"
+                },
+                {
+                    name: "Real Okie Charity Championship",
+                    date: "Jun 3-6, 2026",
+                    location: "Muskogee GC • Muskogee, OK",
+                    purse: "$120,000",
+                    status: "Upcoming"
+                },
+                {
+                    name: "The Territory Classic",
+                    date: "Jun 11-13, 2026",
+                    location: "The Territory GC • Oklahoma",
+                    purse: "$120,000",
+                    status: "Upcoming"
+                },
+                {
+                    name: "Children's Hospital of Illinois Championship",
+                    date: "Jun 24-27, 2026",
+                    location: "Metamora Fields GC • Metamora, IL / Weaver Ridge • Peoria, IL",
+                    purse: "$150,000",
+                    status: "Upcoming"
+                },
+                {
+                    name: "Southwest Kansas Pro-Am",
+                    date: "Aug 10-13, 2026",
+                    location: "Buffalo Dunes GC • Garden City, KS / The Golf Club at Southwin • Garden City, KS",
+                    purse: "$120,000",
+                    status: "Upcoming"
+                },
+                {
+                    name: "High Stakes Showdown",
+                    date: "Nov 18-20, 2026",
+                    location: "Contraband Bayou GC • Lake Charles, LA / Mallard Golf Club • Lake Charles, LA",
+                    purse: "$250,000",
+                    status: "Upcoming"
+                }
+            ];
+
+            const scheduleContainer = document.getElementById("schedule-list");
+            upcomingTournaments.forEach(tourney => {
+                const div = document.createElement("div");
+                div.className = "tournament-card";
+                div.innerHTML = `
+                    <div class="tournament-header">
+                        <h3>${tourney.name}</h3>
+                        <span class="purse">${tourney.purse}</span>
+                    </div>
+                    <div class="tournament-details">
+                        <p><strong>Dates:</strong> ${tourney.date}</p>
+                        <p><strong>Location:</strong> ${tourney.location}</p>
+                    </div>
+                    <div class="tournament-status">${tourney.status}</div>
+                `;
+                scheduleContainer.appendChild(div);
+            });
+
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links li a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
