@@ -40,8 +40,62 @@
     <!-- Tournaments Section -->
     <section class="section">
         <div class="container">
-            <div class="schedule-container" id="schedule-list">
-                <!-- Injected via JavaScript -->
+            <div class="schedule-container">
+                <div class="tournament-card">
+                    <div class="tournament-header">
+                        <h3>Real Okie Charity Championship</h3>
+                        <span class="purse">$120,000</span>
+                    </div>
+                    <div class="tournament-details">
+                        <p><strong>Dates:</strong> Jun 3-6, 2026</p>
+                        <p><strong>Location:</strong> Muskogee GC • Muskogee, OK</p>
+                    </div>
+                    <div class="tournament-status">Upcoming</div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-header">
+                        <h3>The Territory Classic</h3>
+                        <span class="purse">$120,000</span>
+                    </div>
+                    <div class="tournament-details">
+                        <p><strong>Dates:</strong> Jun 11-13, 2026</p>
+                        <p><strong>Location:</strong> The Territory GC • Oklahoma</p>
+                    </div>
+                    <div class="tournament-status">Upcoming</div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-header">
+                        <h3>Children's Hospital of Illinois Championship</h3>
+                        <span class="purse">$150,000</span>
+                    </div>
+                    <div class="tournament-details">
+                        <p><strong>Dates:</strong> Jun 24-27, 2026</p>
+                        <p><strong>Location:</strong> Metamora Fields GC • Metamora, IL / Weaver Ridge • Peoria, IL</p>
+                    </div>
+                    <div class="tournament-status">Upcoming</div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-header">
+                        <h3>Southwest Kansas Pro-Am</h3>
+                        <span class="purse">$120,000</span>
+                    </div>
+                    <div class="tournament-details">
+                        <p><strong>Dates:</strong> Aug 10-13, 2026</p>
+                        <p><strong>Location:</strong> Buffalo Dunes GC • Garden City, KS / The Golf Club at Southwin • Garden City, KS</p>
+                    </div>
+                    <div class="tournament-status">Upcoming</div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-header">
+                        <h3>High Stakes Showdown</h3>
+                        <span class="purse">$250,000</span>
+                    </div>
+                    <div class="tournament-details">
+                        <p><strong>Dates:</strong> Nov 18-20, 2026</p>
+                        <p><strong>Location:</strong> Contraband Bayou GC • Lake Charles, LA / Mallard Golf Club • Lake Charles, LA</p>
+                    </div>
+                    <div class="tournament-status">Upcoming</div>
+                </div>
             </div>
         </div>
     </section>
@@ -54,78 +108,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const upcomingTournaments = [
-                {
-                    name: "Real Okie Charity Championship",
-                    date: "Jun 3-6, 2026",
-                    location: "Muskogee GC • Muskogee, OK",
-                    purse: "$120,000",
-                    status: "Upcoming"
-                },
-                {
-                    name: "The Territory Classic",
-                    date: "Jun 11-13, 2026",
-                    location: "The Territory GC • Oklahoma",
-                    purse: "$120,000",
-                    status: "Upcoming"
-                },
-                {
-                    name: "Children's Hospital of Illinois Championship",
-                    date: "Jun 24-27, 2026",
-                    location: "Metamora Fields GC • Metamora, IL / Weaver Ridge • Peoria, IL",
-                    purse: "$150,000",
-                    status: "Upcoming"
-                },
-                {
-                    name: "Southwest Kansas Pro-Am",
-                    date: "Aug 10-13, 2026",
-                    location: "Buffalo Dunes GC • Garden City, KS / The Golf Club at Southwin • Garden City, KS",
-                    purse: "$120,000",
-                    status: "Upcoming"
-                },
-                {
-                    name: "High Stakes Showdown",
-                    date: "Nov 18-20, 2026",
-                    location: "Contraband Bayou GC • Lake Charles, LA / Mallard Golf Club • Lake Charles, LA",
-                    purse: "$250,000",
-                    status: "Upcoming"
-                }
-            ];
-
-            const scheduleContainer = document.getElementById("schedule-list");
-            upcomingTournaments.forEach(tourney => {
-                const div = document.createElement("div");
-                div.className = "tournament-card";
-                div.innerHTML = `
-                    <div class="tournament-header">
-                        <h3>${tourney.name}</h3>
-                        <span class="purse">${tourney.purse}</span>
-                    </div>
-                    <div class="tournament-details">
-                        <p><strong>Dates:</strong> ${tourney.date}</p>
-                        <p><strong>Location:</strong> ${tourney.location}</p>
-                    </div>
-                    <div class="tournament-status">${tourney.status}</div>
-                `;
-                scheduleContainer.appendChild(div);
-            });
-
-            // Mobile Menu Toggle
-            const hamburger = document.querySelector(".hamburger");
-            const navLinks = document.querySelector(".nav-links");
-
-            hamburger.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-            });
-
-            document.querySelectorAll(".nav-links li a").forEach(link => {
-                link.addEventListener("click", () => {
-                    navLinks.classList.remove("active");
-                });
-            });
-        });
-    </script>
 </body>
 </html>
