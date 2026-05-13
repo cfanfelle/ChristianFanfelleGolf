@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
             statsContainer.appendChild(div);
         });
     }
+
+    // Mobile Menu Toggle
     
     // Mobile Menu Toggle
     const hamburger = document.querySelector(".hamburger");
