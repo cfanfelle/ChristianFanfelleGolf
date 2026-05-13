@@ -110,7 +110,11 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Support & Contact --- */
 .support-text { max-width: 600px; margin: 0 auto 30px; color: #555; }
-.support-buttons { display: flex; gap: 15px; justify-content: center; }
+.support-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.social-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.footer-social { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.footer-social a { color: var(--white); font-weight: 600; }
 .contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 3px; font-family: inherit; }
 .contact-form button { border: none; cursor: pointer; }
