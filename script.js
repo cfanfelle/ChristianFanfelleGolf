@@ -78,6 +78,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 body: JSON.stringify({ amount })
             });
+            const contentType = response.headers.get("content-type") || "";
+
+            if (!contentType.includes("application/json")) {
+                throw new Error("Donation checkout is not available on this page. Please open the site through the Node server.");
+            }
+
             const result = await response.json();
 
             if (!response.ok || !result.url) {
