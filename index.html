@@ -82,9 +82,22 @@
             <h2 class="section-title">Support the Journey</h2>
             <p class="support-text">Professional golf requires immense dedication, travel, and resources. Join the team of sponsors and supporters helping Christian reach the next level.</p>
             <div class="support-buttons">
-                <a href="#" class="btn-gold-solid">Become a Sponsor</a>
-                <a href="https://venmo.com/Christian-Fanfelle" class="btn-dark">Make a Donation</a>
+                <a href="#contact" class="btn-gold-solid">Become a Sponsor</a>
+                <button type="button" class="btn-dark donation-button" data-amount="5000">Donate $50</button>
+                <button type="button" class="btn-dark donation-button" data-amount="10000">Donate $100</button>
+                <button type="button" class="btn-dark donation-button" data-amount="25000">Donate $250</button>
+                <button type="button" class="btn-dark donation-button" data-amount="50000">Donate $500</button>
+                <button type="button" class="btn-dark" id="custom-donation-toggle">Other</button>
             </div>
+            <form id="custom-donation-form" class="custom-donation-form" hidden>
+                <label for="custom-donation-amount">Custom donation amount</label>
+                <div class="custom-donation-controls">
+                    <span class="currency-prefix">$</span>
+                    <input type="number" id="custom-donation-amount" min="5" max="10000" step="1" inputmode="decimal" placeholder="Enter amount">
+                    <button type="submit" class="btn-gold-solid">Donate</button>
+                </div>
+            </form>
+            <p id="donation-message" class="donation-message" aria-live="polite"></p>
             <div class="social-buttons">
                 <a href="https://instagram.com/christianfanfellegolf" target="_blank" rel="noopener noreferrer" class="btn-gold">Instagram</a>
                 <a href="https://www.tiktok.com/@christianfanfellegolf" target="_blank" rel="noopener noreferrer" class="btn-dark">TikTok</a>
