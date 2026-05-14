@@ -120,6 +120,10 @@ app.post('/contact', async (req, res) => {
   }
 });
 
+app.get('/healthz', (req, res) => {
+  res.json({ ok: true });
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });

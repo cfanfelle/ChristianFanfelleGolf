@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: christian-fanfelle-golf
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: PUBLIC_SITE_URL
+        sync: false
+      - key: DEFAULT_DONATION_AMOUNT
+        value: 10000
